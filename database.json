@@ -1,0 +1,13 @@
+{
+    "addresses": {
+        "GH538FHK34RTY" : {
+            "street": "Чистопольская",
+            "home": 14,
+            "entrances": [
+                {"number": 1, "code": 432},
+                {"number": 2, "code": 234}
+            ],
+            "gate": false
+        }
+    }
+}
