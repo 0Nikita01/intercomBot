@@ -87,6 +87,7 @@ bot.on("message", function(msg){
                 console.log("getcode");
                 processingG.changeAction('/getcode');
                 processingG.changeAdresses({});
+                actiovateGetMethods(bot, master, "Чист 14 2");
                 break;
             default :
                 break;
@@ -94,9 +95,24 @@ bot.on("message", function(msg){
     
         
         activateSetMethods(bot, questions, id, text);
-        actiovateGetMethods();
+        
 
     }
+    
+
+})
+
+let serchedAddress = {};
+
+bot.on("callback_query", function(cb){
+    const data = JSON.parse(cb.data);
+    const [elem, user, config] = data;
+
+    if (config === "street") {
+        processingG.changeAdresses(elem);
+        processingG.getDataFromUserG(bot, "Дом?", user, "home", processingG.getDB());
+    }
+
     
 
 })
